@@ -37,7 +37,7 @@ public class OddNumbers {
 		
 		// Output results to console
 		System.out.println("Sum with loop: " + result1);
-		System.out.println ("Sum without loop: " + result2);
+		System.out.println("Sum without loop: " + result2);
 		
 		// Compare results and give appropriate response
 		if (result1 == result2) {

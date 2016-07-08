@@ -21,6 +21,7 @@ public class Banking {
 		// Declare variables for computation
 		int hundreds, twenties, tens, fives, ones, remainingAmount;
 		
+		// Compute amounts and output to user
 		hundreds = amount / 100;
 		remainingAmount = amount % 100;
 		System.out.println("Hundreds = " + hundreds + ", Remaining Amount = " + remainingAmount);
