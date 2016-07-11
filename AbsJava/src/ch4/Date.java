@@ -142,6 +142,12 @@ public class Date {
 			return 11;
 		if (month.equals("December"))
 			return 12;
+		else
+		{
+			System.out.println("Fatal Error");
+			System.exit(0);
+			return 0;
+		}
 	}
 	
 	public int getDay()
@@ -152,6 +158,108 @@ public class Date {
 	public int getYear()
 	{
 		return year;
+	}
+	
+	public String toString()
+	{
+		return (month + " " + day + ", " + year);
+	}
+	
+	public boolean equals(Date otherDate)
+	{
+		return ( (month.equals(otherDate.month))
+					&& (day == otherDate.day)
+					&& (year == otherDate.year) );
+	}
+	
+	public boolean precedes(Date otherDate)
+	{
+		return ( (year < otherDate.year) ||
+				(year == otherDate.year && getMonth() < otherDate.getMonth()) ||
+				(year == otherDate.year && month.equals(otherDate.month) && day < otherDate.day) );
+				
+	}
+	
+	public void readInput()
+	{
+		boolean tryAgain = true;
+		Scanner keyboard = new Scanner(System.in);
+		while (tryAgain)
+		{
+			System.out.println("Enter month, day, and year.");
+			System.out.println("Do not use a comma.");
+			String monthInput = keyboard.next();
+			int dayInput = keyboard.nextInt();
+			int yearInput = keyboard.nextInt();
+			if (dateOK(monthInput, dayInput, yearInput))
+			{
+				setDate(monthInput, dayInput, yearInput);
+				tryAgain = false;
+			}
+			else
+			{
+				System.out.println("Illegal date. Reenter input.");
+			}
+		}
+	}
+	
+	private boolean dateOK(int monthInt, int dayInt, int yearInt)
+	{
+		return ( (monthInt >= 1) && (monthInt <= 12) &&
+				 (dayInt >= 1) && (dayInt <= 31) &&
+				 (yearInt >= 1000) && (yearInt <= 9999) );
+	}
+	
+	private boolean dateOK(String monthString, int dayInt, int yearInt)
+	{
+		return ( monthOK(monthString) &&
+				(dayInt >= 1) && (dayInt <= 31) &&
+				(yearInt >= 1000) && (yearInt <= 9999) );
+	}
+	
+	private boolean monthOK(String month)
+	{
+		return (month.equals("January") || month.equals("February") ||
+				month.equals("March") || month.equals("April") ||
+				month.equals("May") || month.equals("June") ||
+				month.equals("July") || month.equals("August") ||
+				month.equals("September") || month.equals("October") ||
+				month.equals("November") || month.equals("December") );
+	}
+	
+	private String monthString(int monthNumber)
+	{
+		switch (monthNumber)
+		{
+		case 1:
+			return "January";
+		case 2:
+			return "February";
+		case 3:
+			return "March";
+		case 4:
+			return "April";
+		case 5:
+			return "May";
+		case 6:
+			return "June";
+		case 7:
+			return "July";
+		case 8:
+			return "August";
+		case 9:
+			return "September";
+		case 10:
+			return "October";
+		case 11:
+			return "November";
+		case 12:
+			return "December";
+		default:
+			System.out.println("Fatal Error");
+			System.exit(0);
+			return "Error";
+		}
 	}
 	
 	
