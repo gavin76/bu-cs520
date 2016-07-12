@@ -1,0 +1,18 @@
+package ch4;
+
+public class Test {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int x = 0;
+		int y = 0;
+		switch (x+1) {
+			case 0: y = 0;
+			case 1: y = 1;
+			default: y = -1;
+		}
+		System.out.println(x);
+		System.out.println(y);
+	}
+
+}

@@ -1,0 +1,15 @@
+package ch4;
+
+public class Test {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int age = 30;
+		double salary = 25000;
+		
+		salary = 100 * age;
+		
+		System.out.println(salary);
+	}
+
+}

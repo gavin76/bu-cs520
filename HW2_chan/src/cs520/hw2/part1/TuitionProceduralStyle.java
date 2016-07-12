@@ -1,6 +1,7 @@
 package cs520.hw2.part1;
 
-/* Name: Gavin Chan
+/* 
+ * Name: Gavin Chan
  * CS520 Assignment 2 Part 1
  * 
  * A "procedural style" program to compare the tuition costs of two courses
