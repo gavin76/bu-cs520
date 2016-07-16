@@ -13,8 +13,18 @@ public class TuitionProceduralStyle {
 
 	public static int getIntInput(String messagePrompt)
 	{
-		String input = JOptionPane.showInputDialog(messagePrompt);
-		return Integer.parseInt(input);
+		int inputValue;
+		String errorMsg = "";
+		// For the purposes of this program, this function will not accept negative numbers
+		do
+		{
+			String input = JOptionPane.showInputDialog(errorMsg + messagePrompt);
+			inputValue = Integer.parseInt(input);
+			if (inputValue < 0)
+				errorMsg = "A negative number is invalid. Please try again.\n";
+		}
+		while (inputValue < 0);
+		return inputValue;
 	}
 	
 	public static int computeTuition(int numCredits, int costPerCredit)
@@ -27,20 +37,20 @@ public class TuitionProceduralStyle {
 		JOptionPane.showMessageDialog(null, courseName + ":\nTuition Fee is "
 				+ tuitionFee + " dollars");
 	}
-		
+	
 	public static void main(String[] args) {
 		
 		// Get values for the first course via user prompt
 		String firstName = JOptionPane.showInputDialog("Enter name of the first course:");
 		
-		int firstNumCredits = getIntInput("Enter number of credits for " + firstName + " (in dollars):");
+		int firstNumCredits = getIntInput("Enter number of credits for " + firstName + ":");
 		
 		int firstCostPerCredit = getIntInput("Enter cost per credit for " + firstName + " (in dollars):");
 		
 		// Get values for the second course via user prompt
 		String secondName = JOptionPane.showInputDialog("Enter name of the second course:");
 		
-		int secondNumCredits = getIntInput("Enter number of credits for " + secondName + " (in dollars):");
+		int secondNumCredits = getIntInput("Enter number of credits for " + secondName + ":");
 
 		int secondCostPerCredit = getIntInput("Enter cost per credit for " + secondName + " (in dollars):");
 		
