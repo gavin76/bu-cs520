@@ -16,16 +16,18 @@ public class Course {
 	private int numberOfCredits;
 	
 	// Single constructor with three arguments
-	public Course(String courseName, int costPerCredit, int numberOfCredits)
+	public Course(String courseName, int numberOfCredits, int costPerCredit)
 	{
 		this.courseName = courseName;
-		this.costPerCredit = costPerCredit;
 		this.numberOfCredits = numberOfCredits;
+		this.costPerCredit = costPerCredit;
 		
 		// Output to the console the values using the get methods
-		System.out.println("Course name: " + getCourseName());
-		System.out.println("Number of credits: " + getNumberOfCredits());
-		System.out.println("Cost per credit: " + getCostPerCredit());
+		
+		System.out.println("In Course Constructor values set:\n"
+				+ "  CourseName = " + getCourseName()
+				+ ", CostPerCredit = $" + getCostPerCredit()
+				+ ", NumberOfCredits = " + getNumberOfCredits());
 	}
 	
 	// Set methods for the 3 variables
