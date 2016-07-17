@@ -92,6 +92,11 @@ public class Course {
 		return costPerCredit;
 	}
 	
+	public String toString()
+	{
+		return courseName + " (" + numberOfCredits + " credits @ $" + costPerCredit + "/credit)";
+	}
+	
 	// Method to return cost of tuition
 	public int getTotalTuition()
 	{
@@ -101,7 +106,8 @@ public class Course {
 	// Method to display course name and tuition fee
 	public void printTuitionDetails()
 	{
-		JOptionPane.showMessageDialog(null, courseName + ":\nTuition Fee is "
-				+ getTotalTuition() + " dollars");	
+		JOptionPane.showMessageDialog(null, toString() 
+				+ "\nTuition Fee is $"
+				+ getTotalTuition());	
 	}
 }

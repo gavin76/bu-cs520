@@ -96,8 +96,9 @@ public class TuitionProceduralStyle {
 		{
 			// If firstFee is neither greater or less than secondFee, then they are equal
 			JOptionPane.showMessageDialog(null, "The two courses, "
-					+ firstName + " (" + firstNumCredits + " credits) and "
-					+ secondName + " (" + secondNumCredits + " credits) cost the same.");
+					+ firstName + " and "
+					+ secondName + " cost the same ($"
+					+ firstFee + ")");
 		}
 	}
 }
