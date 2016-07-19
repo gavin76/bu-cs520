@@ -1,5 +1,12 @@
 package cs520.hw2.part1;
 
+/* 
+ * Name: Gavin Chan
+ * CS520 Assignment 2 Part 1
+ * 
+ * A program to compare the tuition costs of two courses in object oriented programming
+ */
+
 import javax.swing.JOptionPane;
 
 public class TuitionObjectStyle {

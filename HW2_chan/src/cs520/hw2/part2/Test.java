@@ -1,5 +1,13 @@
 package cs520.hw2.part2;
 
+/*
+ * Name: Gavin Chan
+ * 
+ * CS520 Assignment 2 Part 2
+ * 
+ * Test program for Course and OnlineCourse
+ */
+
 public class Test {
 
 	public static void main(String[] args) 
