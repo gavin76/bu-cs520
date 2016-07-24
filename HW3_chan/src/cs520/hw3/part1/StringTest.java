@@ -21,15 +21,15 @@ public class StringTest {
 			// Find index of first comma and extract the courseId
 			int firstComma = input.indexOf(',');
 			
-			
-				String courseId = input.substring(0, firstComma);
-				System.out.println("First Comma Position:" + firstComma 
-						+ ", CourseId:" + courseId
-						+ ", Length:" + courseId.length());
+			String courseId = input.substring(0, firstComma);
+			System.out.println("First Comma Position:" + firstComma 
+					+ ", CourseId:" + courseId
+					+ ", Length:" + courseId.length());
 			
 			
 			// Try to find index of second comma and extract the courseName
 			int secondComma = input.indexOf(',', firstComma + 1);
+			
 			String courseName = input.substring(firstComma + 1, secondComma);
 			System.out.println("SecondCommaPosition:" + secondComma
 					+ ", CourseName:" + courseName
@@ -40,14 +40,15 @@ public class StringTest {
 			System.out.println("Regular tuition $" + tuition
 					+ ", Discount Tuition $" + (int)(tuition * 0.75));
 	
-		} catch(NullPointerException e) {
-			System.out.println("Error: User input cancelled. Program terminated.");
+		} catch (NullPointerException e) {
+			System.err.println("\nError: User input cancelled. Program terminated.");
 			e.printStackTrace();
-		} catch(StringIndexOutOfBoundsException e) {
-			System.out.println("Error in user input: Program terminated. Please retry with the correct format by using a comma to separate the input values.");
+		} catch (StringIndexOutOfBoundsException e) {
+			System.err.println("\nError in user input: Program terminated. Please retry with the correct format by using a comma to separate the input values.");
 			e.printStackTrace();
-		} catch(NumberFormatException e) {
-			System.out.println("Error in user input: Program terminated. Please enter an integer for tuition.");
+		} catch (NumberFormatException e) {
+			System.err.println("\nError in user input: Program terminated. Please enter an integer for tuition.");
+			e.printStackTrace();
 		}
 	}
 }

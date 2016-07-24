@@ -17,6 +17,7 @@ public class Student {
 		this.name = name;
 	}
 	
+	// Public set methods for the six homework instance variables
 	public void setHomework1(int grade) {
 		homework1 = grade;
 	}
@@ -41,12 +42,14 @@ public class Student {
 		homework6 = grade;
 	}
 	
+	// Public method to return the average homework grade for each student as a double
 	public double computeAverage() {
 		return ( (homework1 + homework2 + homework3 
-				 + homework4 + homework5 + homework6) / 6);
+				 + homework4 + homework5 + homework6) / 6.0);
 	}
 	
+	// toString() override
 	public String toString() {
-		return "The " + name + "'s average grade is " + computeAverage();
+		return String.format("%s's average grade is %.2f", name, computeAverage());
 	}
 }
