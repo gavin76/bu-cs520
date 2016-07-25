@@ -31,12 +31,15 @@ public class StringTest {
 			int secondComma = input.indexOf(',', firstComma + 1);
 			
 			String courseName = input.substring(firstComma + 1, secondComma);
-			System.out.println("SecondCommaPosition:" + secondComma
+			System.out.println("Second Comma Position:" + secondComma
 					+ ", CourseName:" + courseName
 					+ ", Length:" + courseName.length());
 			
 			// Try to extract the tuition
 			int tuition = Integer.parseInt(input.substring(secondComma + 1));
+			
+			// Throw exception if number is a negative number
+			if (tuition < 0) throw new Exception("Error: Tuition must not be a negative number");
 			System.out.println("Regular tuition $" + tuition
 					+ ", Discount Tuition $" + (int)(tuition * 0.75));
 	
@@ -49,6 +52,9 @@ public class StringTest {
 		} catch (NumberFormatException e) {
 			System.err.println("\nError in user input: Program terminated. Please enter an integer for tuition.");
 			e.printStackTrace();
+		} catch (Exception e) {
+			System.err.println(e.getMessage() + " Program terminated.");
+			System.exit(0);
 		}
 	}
 }
