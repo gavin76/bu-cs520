@@ -44,7 +44,7 @@ public class StringTest {
 			System.err.println("\nError: User input cancelled. Program terminated.");
 			e.printStackTrace();
 		} catch (StringIndexOutOfBoundsException e) {
-			System.err.println("\nError in user input: Program terminated. Please retry with the correct format by using a comma to separate the input values.");
+			System.err.println("\nError in user input: Program terminated. Please use the correct format to input the values.");
 			e.printStackTrace();
 		} catch (NumberFormatException e) {
 			System.err.println("\nError in user input: Program terminated. Please enter an integer for tuition.");

@@ -52,7 +52,7 @@ public class Test {
 		try {
 			fileReader = new FileReader(inputFileName);
 		} catch (FileNotFoundException e) {
-			System.out.println("Error: file not found");
+			System.err.println("Error: file not found");
 			e.printStackTrace();
 		}
 		
@@ -67,7 +67,7 @@ public class Test {
 				input = reader.readLine();
 			}
 		} catch (IOException e) {
-			System.out.println("Error in reading file");
+			System.err.println("Error in reading file");
 			e.printStackTrace();
 		}
 		
@@ -75,7 +75,7 @@ public class Test {
 		try {
 			fileReader.close();
 		} catch (IOException e) {
-			System.out.println("Error in closing file");
+			System.err.println("Error in closing file");
 			e.printStackTrace();
 		}
 	}
